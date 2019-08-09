@@ -1,0 +1,32 @@
+<% include header.ejs %>
+<section class="container">
+    <h1 class="row">Formulaire</h1>
+    <form action="/addForm" id="monForm" method="GET">
+        <input type="hidden" name="id" value = "<%= personneVue.id%>" />
+        <div class="row">
+            <div class="col">
+                <input class="form-control" type="text" value="<%= personneVue.nom%>" name="nom" placeholder="Le nom de la personne" />
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" value="<%= personneVue.prenom%>" name="prenom" placeholder="Le prénom de la personne" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="form-control btn btn-danger" type="submit" >Valider</button> 
+            </div>
+        </div>
+
+        <%# <div class="row">
+            <div class="col">
+                <button class="form-control btn btn-warning morpion" type="submit" >Jouer au morpion!</button> 
+            </div>
+        </div> %>
+    </form>
+</section>
+<% include footer.ejs %>

@@ -1,0 +1,27 @@
+<% include header.ejs %>
+    <div >
+        <div>
+            <input type="text" id='pseudo' />
+            <button id='validerPseudo'>Valider</button>
+        </div>
+        <div>
+            <input type="text" id='message' />
+            <button id="sendBouton">Envoyer</button>
+        </div>
+        <div id="result">
+        </div>
+        <h1>Liste des personnes</h1>
+        <% 
+            clePersonnes.forEach((p) => {
+                %>
+                <div>Nom : <%= p.nom %>, Prénom : <%= p.prenom %> <a href='/EditPersonne?id=<%= p.id %>' class='btn btn-default'>Modifier</a> <a href='/DeletePersonne?id=<%= p.id %>' class='btn btn-default'>supprimer</a></div>
+                <%
+            })
+        %>
+         <div class="row">
+            <div class="col">
+                <button class="form-control btn btn-success" type="submit" ><a href="/morpion">Jouer au MORPION</a></button> 
+            </div>
+
+    </div>
+    <% include footer.ejs %>
